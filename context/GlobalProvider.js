@@ -19,13 +19,14 @@ const GlobalProvider = ({ children }) => {
           setIsLoggedIn(false);
           setUser(null);
         }
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);
       })
-      .finally(() => {
-        setIsLoading(false);
-      });
+      // .finally(() => {
+      //   setIsLoading(false);
+      // });
   }, []); // Empty array ensures that the effect is only run once at start because it has no dependencies
 
   return (

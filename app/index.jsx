@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { Text, View, Image, ScrollView } from "react-native";
+import { Text, View, Image, ScrollView, ActivityIndicator } from "react-native";
 import { Redirect, router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -10,7 +10,19 @@ import { useGlobalContext } from "../context/GlobalProvider";
 export default function App() {
   const { isLoading, isLoggedIn } = useGlobalContext();
 
-  if (!isLoading && isLoggedIn) return <Redirect href="/home" />;
+  if (isLoading) {
+    return (
+      <SafeAreaView
+        style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+      >
+        <ActivityIndicator size="large" />
+      </SafeAreaView>
+    );
+  }
+
+  if (isLoggedIn) {
+    return <Redirect href="/home" />;
+  }
 
   return (
     <SafeAreaView className="bg-primary h-full">
