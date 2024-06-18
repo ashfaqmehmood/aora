@@ -24,9 +24,9 @@ const GlobalProvider = ({ children }) => {
       .catch((error) => {
         console.log(error);
       })
-      // .finally(() => {
-      //   setIsLoading(false);
-      // });
+      .finally(() => {
+        setIsLoading(false);
+      });
   }, []); // Empty array ensures that the effect is only run once at start because it has no dependencies
 
   return (
@@ -37,6 +37,7 @@ const GlobalProvider = ({ children }) => {
         user,
         setUser,
         isLoading,
+        setIsLoading,
       }}
     >
       {children}

@@ -10,7 +10,9 @@ import { useGlobalContext } from "../context/GlobalProvider";
 export default function App() {
   const { isLoading, isLoggedIn } = useGlobalContext();
 
-  if (isLoading) {
+  console.log(isLoading, isLoggedIn);
+
+  if (isLoading && !isLoggedIn) {
     return (
       <SafeAreaView
         style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
