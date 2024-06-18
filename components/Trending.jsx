@@ -34,7 +34,7 @@ const TrendingItem = ({ activeItem, item }) => {
   const [play, setPlay] = useState(false);
 
   // console.log(activeItem.$id, item.$id);
-  console.log(item.video)
+  // console.log(item.video)
 
   return (
     <Animatable.View
