@@ -10,7 +10,7 @@ import { useGlobalContext } from "../context/GlobalProvider";
 export default function App() {
   const { isLoading, isLoggedIn } = useGlobalContext();
 
-  console.log(isLoading, isLoggedIn);
+  // console.log(isLoading, isLoggedIn);
 
   if (isLoading && !isLoggedIn) {
     return (
